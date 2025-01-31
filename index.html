@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Kumar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>File Library</title>
 </head>
-<body>
-    <h1>Welcome To my page...!!</h1>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="container mx-auto px-4 py-6">
+    <h1 class="text-2xl font-bold mb-6 text-center">Welcome Abhishek...!</h1>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <script>
+        const files = [
+          { name: "Form", link: "webApplication/form.html" },
+          { name: "Fav Color Picker", link: "webApplication/color.php" },
+        ];
+
+        files.reverse();
+
+        files.forEach(file => {
+          document.write(`
+            <a href="${file.link}" class="block p-4 bg-white shadow rounded-lg hover:shadow-lg hover:bg-gray-50 transition">
+              <div class="flex flex-col items-center">
+                <div class="w-16 h-16 bg-blue-100 flex items-center justify-center rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6" />
+                  </svg>
+                </div>
+                <p class="mt-2 text-center text-sm font-medium text-gray-700">${file.name}</p>
+              </div>
+            </a>
+          `);
+        });
+      </script>
+    </div>
+  </div>
 </body>
 </html>
